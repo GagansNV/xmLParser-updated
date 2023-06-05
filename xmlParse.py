@@ -1,5 +1,6 @@
 import csv
 import xml.etree.ElementTree as ET
+import random
 
 def xml_to_csv(xml_file, csv_file):
     # Parse the XML file
@@ -120,8 +121,12 @@ def xml_to_csv(xml_file, csv_file):
             if business.tag == "businessId":
                 busnId=(business.text)
                 busTag=business.tag
-                # test2.append(busnId)
-                # test1.append(busTag)
+                fileid_tag="fileId"
+                file_id=random.randrange(100,1000)
+                test2.append(busnId)
+                test1.append(busTag)
+                test2.append(file_id)
+                test1.append(fileid_tag)
             # for i in  business[1]:
                 
             #     print(i)
@@ -173,7 +178,7 @@ def xml_to_csv(xml_file, csv_file):
         data=i
         data_file= i+".csv"
         child_new = root.findall('.//business/locations/location/{}/**'.format(data))
-        # print(i)
+        # print(i)*
         # print(data)
         
         with open(data_file, 'w', newline='') as f:
@@ -192,6 +197,8 @@ def xml_to_csv(xml_file, csv_file):
                 essensTag.append(jt)
                 print(essensTag)
                 essensText.append(kt)
+                essensText.append(file_id)
+                essensTag.append(fileid_tag)
         
         
             writer.writerow(essensTag)
