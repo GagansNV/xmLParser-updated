@@ -1,0 +1,2 @@
+day,startHour,startMinute,endHour,endMinute,appointmentOnly,effectiveDate,sequence,action
+MONDAY,123,123,123,123,true,2012-12-13,123,str1234
